@@ -1,16 +1,16 @@
--- Task 2: Create Your Magical Tables
+-- Task 2: Create Magical Tables
 
--- Switch to the alx_book_store database
+-- Switch to alx_book_store database
 USE alx_book_store;
 
--- Create the authors table
-CREATE TABLE authors (
+-- Create authors table
+CREATE TABLE Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     author_name VARCHAR(215) NOT NULL
 );
 
--- Create the books table
-CREATE TABLE books (
+-- Create books table
+CREATE TABLE Books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(130) NOT NULL,
     author_id INT,
@@ -20,23 +20,23 @@ CREATE TABLE books (
 );
 
 -- Create the customers table
-CREATE TABLE customers (
+CREATE TABLE Customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(215) NOT NULL,
     email VARCHAR(215) NOT NULL,
     address TEXT
 );
 
--- Create the orders table
-CREATE TABLE orders (
+-- Create orders table
+CREATE TABLE Orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     order_date DATE NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
--- Create the order_details table
-CREATE TABLE order_details (
+-- Create order_details table
+CREATE TABLE Order_Details (
     orderdetail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     book_id INT,
